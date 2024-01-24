@@ -1,0 +1,11 @@
+# My answer to exercise 1 on PracticePython.com
+
+name = input("What is your name?\n")
+
+age = int(input("Hi " + name + "! How old are you going to be by the end of this year?\n"))
+
+current_year = int(input("Mind telling me what the current year is? I'm just a robot. I don't know =)\n"))
+
+one_hundred = current_year - age + 100
+
+print(name + ", you will turn 100 in the year " + str(one_hundred) + ".")
