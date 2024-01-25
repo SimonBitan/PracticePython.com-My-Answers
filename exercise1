@@ -1,4 +1,5 @@
-# My answer to exercise 1 on PracticePython.com
+### Exercise 1: Create a program that asks the user to enter their name and their age. 
+# Print out a message addressed to them that tells them the year that they will turn 100 years old.
 
 name = input("What is your name?\n")
 
@@ -8,4 +9,18 @@ current_year = int(input("Mind telling me what the current year is? I'm just a r
 
 one_hundred = current_year - age + 100
 
-print(name + ", you will turn 100 in the year " + str(one_hundred) + ".")
+original = name + ", you will turn 100 in the year " + str(one_hundred) + ". "
+
+print(original)
+
+### Extras:
+
+# 1. Add on to the previous program by asking the user for another number and printing out that many copies of the previous message.
+
+copies = int(input("Now give me a number, and I'll print out that many copies of the previous message.\n"))
+
+print(copies * original)
+
+# 2. Print out that many copies of the previous message on separate lines.
+
+print((original + "\n") * copies)
