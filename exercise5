@@ -1,0 +1,49 @@
+### Take two lists, say for example these two:
+
+# a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+# b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+# and write a program that returns a list that contains only the elements that are common between the lists (without duplicates). 
+# Make sure your program works on two lists of different sizes.
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+c = []
+
+for element1 in a:
+    for element2 in b:
+        if element1 == element2:
+            if element1 not in c:
+                c.append(element1)
+
+print(c)
+
+### Extras
+
+# 1.Randomly generate two lists to test this
+import random
+
+length_list1 = random.randint(1,15)
+length_list2 = random.randint(1,15)
+
+random_list1 = [random.randint(1, 100) for _ in range(length_list1)]
+random_list2 = [random.randint(1, 100) for _ in range(length_list2)]
+random_list3 = []
+
+print("This is the first random list: " + str(random_list1))
+print("This is the secondd random list: " + str(random_list2))
+
+for element3 in random_list1:
+    for element4 in random_list2: 
+        if element3 == element4:
+            if element3 not in random_list3:
+                random_list3.append(element3)
+                
+print("These are the numbers that both random lists share: " + str(random_list3))
+
+# 2. Write this in one line of Python (don’t worry if you can’t figure this out at this point - we’ll get to it soon)
+
+# ***Simon's note: I'm assuming they mean the original exercise when they say "this".
+# *The random one seems extraordinarily complex if not impossible for a beginner to make into one line.
+
+print([element for element in a if element in b][1:])
