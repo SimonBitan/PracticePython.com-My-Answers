@@ -1,0 +1,46 @@
+### Make a two-player Rock-Paper-Scissors game. 
+# *** Simon's note: two-player Rock-Paper-Scissors with each person giving an input seems like a waste of time. Anyone can do that with another player without a program. 
+# * Instead, I've made a program where it's a player vs the computer that gives a random input.
+
+import random
+
+while True:
+    player_selection = input("Choose rock, paper, or scissors: ")
+
+    computer_selection = random.randint(1,3)
+
+    if computer_selection == 1:
+        print("The computer selected rock.")
+    elif computer_selection == 2:
+        print("The computer selected paper.")
+    elif computer_selection == 3:
+        print("The computer selected scissors.")
+
+    if player_selection == "Rock" or player_selection == "rock":
+        if computer_selection == 1:
+            print("It's a draw!")
+        elif computer_selection == 2:
+            print("You lost!")
+        elif computer_selection == 3:
+            print("You won!")
+
+    if player_selection == "Paper" or player_selection == "paper":
+        if computer_selection == 2:
+            print("It's a draw!")
+        elif computer_selection == 3:
+            print("You lost!")
+        elif computer_selection == 1:
+            print("You won!")
+
+    if player_selection == "Scissors" or player_selection == "scissors":
+        if computer_selection == 3:
+            print("It's a draw!")
+        elif computer_selection == 1:
+            print("You lost!")
+        elif computer_selection == 2:
+            print("You won!")
+
+    play_again = input("Would you like to play again? ")
+
+    if play_again.lower() != "yes":
+        break
