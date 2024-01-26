@@ -31,7 +31,7 @@ random_list2 = [random.randint(1, 100) for _ in range(length_list2)]
 random_list3 = []
 
 print("This is the first random list: " + str(random_list1))
-print("This is the secondd random list: " + str(random_list2))
+print("This is the second random list: " + str(random_list2))
 
 for element3 in random_list1:
     for element4 in random_list2: 
