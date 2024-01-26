@@ -1,0 +1,15 @@
+### Create a program that asks the user for a number and then prints out a list of all the divisors of that number. 
+
+number = int(input("Type a number: "))
+
+potential_divisors = list(range(number + 1))
+
+potential_divisors.pop(0)
+
+divisors = []
+
+for index, element in enumerate(potential_divisors):
+    if number % element == 0:
+        divisors.append(element)
+
+print("The following are the divisors of " + str(number) + ": " + str(divisors))
