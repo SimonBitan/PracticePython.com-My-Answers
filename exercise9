@@ -1,0 +1,39 @@
+### Generate a random number between 1 and 9 (including 1 and 9). 
+# Ask the user to guess the number, then tell them whether they guessed too low, too high, or exactly right.
+
+import random
+
+while True:
+
+    random_num = random.randint(1, 9)
+    guess_count = 0
+
+    while True:
+
+        print("I'm thinking of a number between (and including) 1 and 9.")
+
+        guess = int(input("Guess what it is: "))
+
+        if random_num == guess:
+            print("Ah, you guessed my number!")
+            guess_count = guess_count + 1
+            break
+        elif guess > random_num:
+            print("You guessed too high! Try again.")
+            guess_count = guess_count + 1
+        elif guess < random_num:
+            print("You guessed too low! Try again.")
+            guess_count = guess_count + 1
+
+    print("Well done. You got the answer in " + str(guess_count) + " guess(es).")
+   
+### Extras
+
+# 1. Keep the game going until the user types “exit”
+    keep_playing = input("Would you like to continue playing? Type anything if yes, 'exit' if no. ")
+
+    if keep_playing.lower() == "exit":
+        break
+
+# 2. Keep track of how many guesses the user has taken, and when the game ends, print this out.
+# *** Simon's note: added into original exercise.
