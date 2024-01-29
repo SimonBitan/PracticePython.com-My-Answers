@@ -1,0 +1,15 @@
+### Write a program that takes a list of numbers (for example, a = [5, 10, 15, 20, 25]) and makes a new list of only the first and last elements of the given list. 
+### For practice, write this code inside a function.
+
+import random
+
+def firstlast(input_list):
+    result_list = [input_list[0], input_list[-1]]
+    return(result_list)
+
+listlength = random.randint(3,5)
+a = [random.randint(1, 100) for _ in range(listlength)]
+print("This is the randomly generated list: " + str(a))
+
+result = firstlast(a)
+print("Here are the first and last elements of that list: " + str(result))
