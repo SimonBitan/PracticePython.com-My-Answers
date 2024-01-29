@@ -1,0 +1,68 @@
+### Write a program (function!) that takes a list and returns a new list that contains all the elements of the first list minus all the duplicates.
+
+## Extras:
+
+## Write two different functions to do this - one using a loop and constructing a list, and another using sets.
+
+import random
+
+list_length = 5
+random_list = [random.randint(1,5) for _ in range(list_length)]
+
+print("This is the randomly generated list: " + str(random_list))
+
+# Set
+def remove_duplicates_set(list_input):
+    new_list = list(set(list_input))
+
+    return new_list
+
+no_duplicates_set = remove_duplicates_set(random_list)
+
+print("This is the list without duplicates, using sets: " + str(no_duplicates_set))
+
+# Loop
+
+def remove_duplicates_loop(list_input):
+    newlist = []
+
+    for element in list_input:
+        if element not in newlist:
+            newlist.append(element)
+
+    return newlist
+
+no_duplicates_loop = remove_duplicates_loop(random_list)
+
+print("This is the list without duplicates, using a for loop: " + str(no_duplicates_loop))
+
+## Go back and do Exercise 5 using sets, and write the solution for that in a different function. Exercise 5 copied below.
+
+### Take two lists, say for example these two:
+
+# a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+# b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+# and write a program that returns a list that contains only the elements that are common between the lists (without duplicates). 
+# Make sure your program works on two lists of different sizes.
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+print("This is list a: " + str(a))
+print("This is list b: " + str(b))
+
+def remove_duplicates_from_two_lists(list_a, list_b):
+    c = []
+
+    for element_a in list_a:
+        for element_b in list_b:
+            if element_a == element_b:
+                c.append(element_a)
+
+    c = list(set(c))
+    return c
+
+c = remove_duplicates_from_two_lists(a, b)
+
+print("These are the numbers found in both lists: " + str(c))
