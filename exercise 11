@@ -1,0 +1,18 @@
+### Ask the user for a number and determine whether the number is prime or not. 
+
+number = int(input("Type a number: "))
+
+potential_divisors = list(range(number + 1))
+
+potential_divisors.pop(0)
+
+divisors = []
+
+for index, element in enumerate(potential_divisors):
+    if number % element == 0:
+        divisors.append(element)
+
+if len(divisors) > 2:
+    print(str(number) + " is not a prime number.")
+else:
+    print(str(number) + " is a prime number.")
